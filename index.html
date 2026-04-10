@@ -1,0 +1,66 @@
+<!-- ================= INDEX.HTML ================= -->
+ <!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>Quick Bite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body><!-- NAVBAR --><div class="navbar" id="navbar" style="display:none">
+  <h2>Quick Bite</h2>
+  <input type="text" id="search" placeholder="🔍︎   Search food..." onkeyup="searchProduct()">
+  <div>
+    <button onclick="toggleCart()">Cart 🛒</button>
+    <button onclick="showHistory()">Orders 📦</button>
+    <button id="lgbtn" onclick="logout()">Logout 🚪</button>
+  </div>
+</div><!-- LOGIN --><div class="auth" id="auth">
+  <div class="box">
+    <h2 id="title">Login</h2><input type="text" id="fname" placeholder="First Name" style="display:none">
+<input type="text" id="lname" placeholder="Last Name" style="display:none">
+<input type="text" id="regNumber" placeholder="Mobile Number" style="display:none">
+<input type="password" id="regPassword" placeholder="Password" style="display:none">
+<input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none">
+
+<input type="text" id="loginNumber" placeholder="Mobile Number">
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button id="subbtn" onclick="handleAuth()">Submit</button>
+<p onclick="toggleAuth()" id="toggleText">New user? Register</p>
+
+  </div>
+</div><!-- MAIN -->
+<div id="main" style="display:none">
+    <div class="products" id="products"></div>
+<!-- CART -->
+ <div class="cart" id="cart" style="display:none">
+  <h3>Cart</h3>
+  <ul id="cartItems"></ul>
+  <p>Total: ₹<span id="total">0</span></p>
+  <button onclick="openOrder()">Order Now</button>
+</div><!-- POPUP --><div class="popup" id="popup">
+  <div class="popupBox">
+    <h3>Complete Order</h3>
+
+<input id="name" placeholder="Name">
+<input id="number" placeholder="Mobile">
+<textarea id="address" placeholder="Address"></textarea>
+
+<img src="images/pay.jpeg">
+
+<p><b>UPI ID:</b> sanjay@upi</p>
+<p style="color:green;">✔ Payment karne ke baad "Done Payment" click kare</p>
+
+<button id="payBtn" onclick="submitOrder()">Done Payment</button>
+  </div>
+</div><!-- HISTORY -->
+
+<div class="history" id="history">
+  <div class="historyBox">
+    <h3>Order History</h3>
+    <ul id="historyList"></ul>
+
+    <button onclick="closeHistory()">Close</button>
+  </div>
+</div>
+</div><script src="script.js"></script>
+</body></html>
